@@ -12,9 +12,9 @@
     />
   </head>
   <body>
-<div class="announcement-banner">
-  📢 Activity registration is open until the end of the month. Don't miss your spot!
-</div>    
+<div class="announcement-banner" id="announcement-banner">
+  <!-- Announcement messages will be loaded here -->
+</div>
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
@@ -29,7 +29,41 @@
             <button id="logout-button">Logout</button>
           </div>
         </div>
+        <button id="manage-announcements-btn" class="icon-button hidden" title="Manage Announcements">
+          <span class="announcement-icon">📢</span>
+        </button>
       </div>
+        <!-- Announcement Management Modal -->
+        <div id="announcement-modal" class="modal hidden">
+          <div class="modal-content announcement-modal-content">
+            <span class="close-announcement-modal">&times;</span>
+            <h3>Manage Announcements</h3>
+            <div id="announcements-list"></div>
+            <hr />
+            <form id="announcement-form">
+              <h4 id="announcement-form-title">Add Announcement</h4>
+              <div class="form-group">
+                <label for="announcement-title">Title:</label>
+                <input type="text" id="announcement-title" required />
+              </div>
+              <div class="form-group">
+                <label for="announcement-message">Message:</label>
+                <textarea id="announcement-message" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="announcement-expiration">Expiration Date:</label>
+                <input type="datetime-local" id="announcement-expiration" required />
+              </div>
+              <div class="form-group">
+                <label for="announcement-start">Start Date (optional):</label>
+                <input type="datetime-local" id="announcement-start" />
+              </div>
+              <input type="hidden" id="announcement-id" />
+              <button type="submit" id="save-announcement-btn">Save</button>
+              <button type="button" id="cancel-edit-btn" class="hidden">Cancel</button>
+            </form>
+          </div>
+        </div>
     </header>
 
     <main>

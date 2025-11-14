@@ -665,9 +665,144 @@ footer {
   background-color: rgba(255, 255, 255, 0.3);
 }
 .announcement-banner {
-  background-color: #2e7d32;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-weight: bold;
+  background: linear-gradient(90deg, var(--secondary-light), var(--primary-light));
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(255, 111, 0, 0.08);
+  min-height: 40px;
+  transition: background 0.3s;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+  margin-left: 8px;
+}
+.icon-button:hover, .icon-button:focus {
+  background: var(--secondary-light);
+}
+
+.announcement-icon {
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+/* Announcement Modal */
+#announcement-modal .modal-content.announcement-modal-content {
+  max-width: 480px;
+  width: 100%;
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 28px 24px 20px 24px;
+  box-shadow: 0 6px 32px rgba(26,35,126,0.13);
+  position: relative;
+}
+#announcement-modal h3 {
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+#announcement-modal .close-announcement-modal {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.5em;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+#announcements-list {
+  margin-bottom: 18px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.announcement-item {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+}
+.announcement-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.announcement-actions button {
+  font-size: 0.95em;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background: var(--primary-light);
+  color: var(--primary-text);
+  transition: background 0.2s;
+}
+.announcement-actions button.delete {
+  background: var(--error);
+  color: #fff;
+}
+.announcement-actions button.edit {
+  background: var(--secondary);
+  color: #fff;
+}
+.announcement-actions button:hover {
+  filter: brightness(1.1);
+}
+#announcement-form {
+  margin-top: 10px;
+}
+#announcement-form .form-group {
+  margin-bottom: 10px;
+}
+#announcement-form label {
+  font-weight: 500;
+  margin-bottom: 2px;
+  display: block;
+}
+#announcement-form input,
+#announcement-form textarea {
+  width: 100%;
+  padding: 7px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 1em;
+  margin-top: 2px;
+}
+#announcement-form textarea {
+  min-height: 48px;
+  resize: vertical;
+}
+#announcement-form button {
+  margin-top: 6px;
+  margin-right: 8px;
+  padding: 7px 18px;
+  border-radius: 4px;
+  border: none;
+  background: var(--primary);
+  color: var(--primary-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#announcement-form button#cancel-edit-btn {
+  background: var(--border);
+  color: var(--text-secondary);
+}
+#announcement-form button:hover {
+  filter: brightness(1.1);
 }
